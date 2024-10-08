@@ -12,5 +12,5 @@ function reverseString(str) {
   return reversedString;
 }
 
-// Example :Log the reversed string of "hello" to the console
+// Example : Log the reversed string of "hello" to the console
 console.log(reverseString("hello")); // Output: "olleh"
