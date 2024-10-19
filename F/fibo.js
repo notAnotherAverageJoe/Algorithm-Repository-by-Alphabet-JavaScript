@@ -18,3 +18,16 @@ console.log(fibonacci(5));
 console.log(fibonacci(6));
 console.log(fibonacci(7));
 console.log(fibonacci(10));
+
+// recursive method
+
+function recursiveFibo(n) {
+  if (n === 0) return 0;
+  if (n === 1) return 1;
+  return recursiveFibo(n - 1) + recursiveFibo(n - 2);
+}
+
+console.log(recursiveFibo(5));
+console.log(recursiveFibo(6));
+console.log(recursiveFibo(7));
+console.log(recursiveFibo(10));
