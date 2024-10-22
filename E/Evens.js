@@ -1,5 +1,8 @@
 // Function to find even numbers within an array
 function evens(arr) {
+  if (!Array.isArray(arr)) {
+    return "Invalid Array";
+  }
   // Initialize an empty array to store even numbers
   let evenNums = [];
 
