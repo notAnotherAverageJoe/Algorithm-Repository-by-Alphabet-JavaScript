@@ -20,6 +20,7 @@ function twoSum(arr, target) {
   return null;
 }
 
-console.log(twoSum([2, 7, 11, 15], 9)); // Output: [0, 1]
+console.log(twoSum([2, 11, 7, 15], 9)); // Output: [0, 1]
 console.log(twoSum([1, 3, 5, 7], 10)); // Output: [2, 3]
+console.log(twoSum([1, 2, 3], 7));
 console.log(twoSum([1, 2, 3], 7));
