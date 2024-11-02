@@ -1,33 +1,20 @@
-function longestSubstring(inputString) {
-  // Check if the input string is empty
-  if (inputString.length === 0) return "";
+function longestSub(str) {
+  let left = 0;
+  let longest = "";
+  let charSet = new Set();
 
-  // Check if the input string length is 1
-  if (inputString.length === 1) return inputString;
+  for (let right = 0; right < str.length; right++) {
+    while (charSet.has(str[right])) {
+      charSet.delete(str[left]);
+      left++;
+    }
 
-  if (typeof inputString !== "string") {
-    return "Invalid input";
-  }
+    charSet.add(str[right]);
 
-  // Split the string into words, trimming spaces
-  let words = inputString.trim().split(" ");
-
-  // Variable to hold the longest substring
-  let longestSubstring = "";
-
-  // Loop through each word to find the longest one
-  for (let str of words) {
-    if (str.length > longestSubstring.length) {
-      longestSubstring = str; // Update the longest substring
+    if (right - left + 1 > longest.length) {
+      longest = str.slice(left, right + 1);
     }
   }
-
-  return longestSubstring; // Return the longest substring
+  return longest;
 }
-
-// Example usage
-console.log(longestSubstring("This is a test")); // Output: "test"
-console.log(longestSubstring("   singleWord   ")); // Output: "singleWord"
-console.log(longestSubstring("")); // Output: ""
-console.log(longestSubstring("word1 word2 word3")); // Output: "word3"
-console.log(longestSubstring(22)); // Output: invalid input
+console.log(longestSub("aabcdeeee"));
